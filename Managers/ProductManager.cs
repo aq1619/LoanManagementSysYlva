@@ -69,7 +69,10 @@ namespace LoanManagementSys
             return (index >= 0) && (index < products.Count);
         }
 
-
+        public List<Product> GetProducts() 
+        {
+            return products;
+        }
         //Preapare and rturn a string array where each element contains
         //information about the loanObject, calling the object's
         //toString metod.  The return array can then be used to update
@@ -114,11 +117,10 @@ namespace LoanManagementSys
         //This method is called for adding a new tests object in the list.
         public Product AddNewTestProduct()
         {
-            Product product = new Product(); // Assume Product constructor and methods are defined elsewhere
+            Product product = new Product(); 
             product.ID = lastProductID.ToString();
             product.Name = $"Product{lastProductID++}";
             products.Add(product);
-            Console.WriteLine("Product added: " + product.Name);
             return product;
         }
 

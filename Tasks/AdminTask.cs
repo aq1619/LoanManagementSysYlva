@@ -12,13 +12,14 @@ namespace LoanManagementSys.Tasks
         public ProductManager productManager;
         private Random random;
         public Product product;
-        private LoanSystem loanSystem;
+        public LoanSystem loanSystem;
 
         private bool isRunning = true;
 
-        public AdminTask(ProductManager productManager)
+        public AdminTask(ProductManager productManager, LoanSystem loanSystem)
         {
             this.productManager = productManager;
+            this.loanSystem = loanSystem;
             random = new Random();
         }
         public bool IsRunning { get; set; }
@@ -44,14 +45,11 @@ namespace LoanManagementSys.Tasks
             IsRunning = false;
         }
 
-
-        private void newProduct()
+        public void newProduct()
         {
-            productManager.AddNewTestProduct();
-            Debug.WriteLine("New product added: " + productManager.Count);
-            
-            //   productManager.AddNewTestProduct();
+            Product newProduct = productManager.AddNewTestProduct();
+            string eventMessage = "Admin added product: " + newProduct.Name;
+            loanSystem.WriteEventLog(eventMessage);
         }
-
     }
 }

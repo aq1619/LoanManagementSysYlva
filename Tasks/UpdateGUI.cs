@@ -33,27 +33,6 @@ internal class UpdateGUI
     //if false, it stops
     public bool IsRunning { get; set; } = true;
 
-
-    //This method is run by the thread assigned to perform the task. It requests
-    //updating the list of products and the list of items on loan by the controller.
-    //public void Run()
-    //{
-    //    try
-    //    {
-    //        while (isRunning)
-    //        {
-
-    //            // Update any UI  - UpdateLoanIemList
-                
-    //            loanSys.UpdateAllItems();  
-    //            Thread.Sleep(2000); // Simulate some operation
-    //        }
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        loanSys.UpdateEventListBox();
-    //    }
-    //}
     public void Run()
     {
         try
@@ -62,7 +41,7 @@ internal class UpdateGUI
             {
                 Debug.WriteLine("updating GUI " + DateTime.Now);
                 
-                Thread.Sleep(2000); 
+                Thread.Sleep(1000); 
                 loanSys.UpdateAllItems();
             }
         }
