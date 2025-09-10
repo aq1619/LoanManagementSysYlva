@@ -26,7 +26,6 @@ namespace LoanManagementSys
         private Thread returnThread;
         private Thread loanThread;
 
-
         private ListBox productListBox;
         private ListBox eventLogListBox;
         public LoanSystem(ListBox productListBox, ListBox eventLogListBox)

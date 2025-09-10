@@ -10,9 +10,9 @@ namespace LoanManagementSys;
 //can be loaned to members of the system
 public class Product
 {
-    public string name;
-    public string id;
-    public string description;
+    private string name;
+    private string id;
+    private string description;
 
     //Properties
     public string Name
